@@ -18,7 +18,7 @@ def activated(recognizer: VoiceRecognizer.VoiceRecognizer):
 def setAction(recognizer: VoiceRecognizer.VoiceRecognizer, spotify: SpotifyApi):
     text = recognizer.recognize()
     if text == "play":
-        playsound('activated2.wav')
+        playsound('activated4.mp3')
         song = recognizer.recognize()
         print(song)
         spotify.play_song(song)
