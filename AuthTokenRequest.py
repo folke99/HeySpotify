@@ -16,8 +16,6 @@ def getRefreshToken():
     access_token = auth_response_data['access_token']
     print(access_token)
 
-def getAuthToken():
-    pass
 
 
 if __name__ == "__main__":

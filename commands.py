@@ -1,14 +1,16 @@
 import VoiceRecognizer
 from playsound import playsound
+
+import secrets
 from SpotifyApi import SpotifyApi
 
 def activated(recognizer: VoiceRecognizer.VoiceRecognizer):
     text = recognizer.recognize()
     if text:
-        if text == "hey spotify" or text == "play spotify" or text == "pay spotify":
+        if text == "hey spotify" or text == "play spotify" or text == "pay spotify" or text == "spotify" or text == "his spotify":
             print("RECOGNIZED")
             playsound('activated.wav')
-            spotify = SpotifyApi("")  # instantiate SpotifyApi class with access token
+            spotify = SpotifyApi(secrets.SPOTIFY_AUTH_TOKEN)  # instantiate SpotifyApi class with access token
             setAction(recognizer, spotify)
             # do something here
         else:
